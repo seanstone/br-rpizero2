@@ -8,17 +8,17 @@ default: all
 OS := $(shell uname -s)
 ifneq ($(OS),Darwin)
 
-all menuconfig defconfig: $(O)/.config
-
-## Making sure defconfig is already run
-$(O)/.config: 
-	$(MAKE) raspberrypizero2w_defconfig
-
 BR2_EXTERNAL := $(CURDIR)
 BR2_DEFCONFIG := $(CURDIR)/configs/raspberrypizero2w_defconfig
 O := $(CURDIR)/build
 include $(BR2_DEFCONFIG)
 export
+
+all menuconfig defconfig: $(O)/.config
+
+## Making sure defconfig is already run
+$(O)/.config:
+	$(MAKE) raspberrypizero2w_defconfig
 
 endif
 
