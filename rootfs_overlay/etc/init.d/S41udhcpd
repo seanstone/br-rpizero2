@@ -1,0 +1,25 @@
+#!/bin/sh
+
+case "$1" in
+	start)
+		echo -ne "Starting dhcpd Daemon..." > /dev/kmsg
+		start-stop-daemon -S -b -q -m -p /var/run/udhcpd.pid -x /usr/sbin/udhcpd -- /etc/udhcpd.conf
+		[ $? = 0 ] && echo -e "OK" > /dev/kmsg || echo -e "FAIL" > /dev/kmsg
+		;;
+
+	stop)
+		echo -ne "Stopping dhcpd Daemon..." > /dev/kmsg
+		start-stop-daemon -K -q -p /var/run/udhcpd.pid 2>/dev/null
+		[ $? = 0 ] && echo -e "OK" > /dev/kmsg || echo -e "FAIL" > /dev/kmsg
+		;;
+
+	restart)
+		$0 stop
+		sleep 1
+		$0 start
+		;;
+
+	*)
+		echo "Usage: $0 {start|stop|restart}"
+		exit 1
+esac

@@ -66,7 +66,6 @@ build.img:
 
 .PHONY: docker-bash
 docker-bash: build.img
-	xhost+
 	mkdir -p build/images
 	docker run --init --rm -it --privileged \
 		-e DISPLAY=host.docker.internal:0 \
