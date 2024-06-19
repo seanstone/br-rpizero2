@@ -75,3 +75,11 @@ docker-bash: build.img
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		--platform linux/amd64 br-rpizero2 \
 		sudo -H -u user bash -c "cd /home/user/br-rpizero2 && sudo mount -o loop build.img build && sudo chown user:users build && mkdir -p build/images && sudo mount --bind /home/user/images build/images && bash"
+
+flash-%: build/images/sdcard.img
+	@if df | grep '/Volumes/' | grep $*; then \
+		(diskutil umount /dev/$*s1 || true) && \
+		dd if=$< of=/dev/$* bs=4k status=progress && \
+		sync; \
+	else echo "Invalid device"; \
+	fi
