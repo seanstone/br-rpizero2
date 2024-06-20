@@ -1,0 +1,19 @@
+#!/bin/sh
+PART_START=$(parted /dev/mmcblk0 -ms unit s p | grep "^2" | cut -f 2 -d: | sed 's/[^0-9]//g')
+fdisk -u /dev/mmcblk0 <<EOF
+p
+d
+2
+n
+p
+2
+${PART_START}
+
+p
+w
+EOF
+partprobe
+resize2fs /dev/mmcblk0p2
+sync
+partprobe
+rm -- "$0"
