@@ -11,6 +11,9 @@ RUN apt install -y --no-install-recommends --allow-unauthenticated \
     wget cpio unzip rsync bc \
     cmake libncurses5-dev libssl-dev openssh-client device-tree-compiler ca-certificates
 
+RUN apt install -y --no-install-recommends --allow-unauthenticated \
+    nano
+
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER user
