@@ -64,8 +64,8 @@ build.img:
 		--platform linux/amd64 br-rpizero2 \
 		sudo -H -u user bash -c "cd /home/user/br-rpizero2 && mkfs.ext4 build.img"
 
-.PHONY: docker-bash
-docker-bash: build.img
+.PHONY: bash
+bash: build.img
 	mkdir -p build/images
 	docker run --init --rm -it --privileged \
 		-e DISPLAY=host.docker.internal:0 \
