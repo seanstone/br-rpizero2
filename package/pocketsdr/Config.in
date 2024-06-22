@@ -1,0 +1,10 @@
+config BR2_PACKAGE_POCKETSDR
+	bool "pocketsdr"
+	select BR2_PACKAGE_FFTW
+	select BR2_PACKAGE_FFTW_SINGLE
+	select BR2_PACKAGE_FFTW_FAST
+	select BR2_PACKAGE_LIBUSB
+	help
+      Pocket SDR - An Open-Source GNSS SDR.
+
+      https://github.com/seanstone/PocketSDR
