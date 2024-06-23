@@ -1,0 +1,4 @@
+#!/bin/sh
+fallocate -l 8G /swapfile
+mkswap /swapfile
+swapon /swapfile
