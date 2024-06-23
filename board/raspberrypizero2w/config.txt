@@ -30,3 +30,6 @@ dtoverlay=dwc2,dr_mode=peripheral
 
 # enable autoprobing of Bluetooth driver without need of hciattach/btattach
 dtparam=krnbt=on
+
+# enable 64bits support
+arm_64bit=1
