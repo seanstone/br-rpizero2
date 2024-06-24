@@ -7,7 +7,7 @@
 | | GPIO 3 | 5 | 6 | GND | - |
 || GPIO 4 | 7 | 8 | GPIO 14 | |
 | - | GND | 9 | 10 | GPIO 15 | |
-|| GPIO 17 | 11 | 12 | GPIO 18 | |
+|| GPIO 17 | 11 | 12 | GPIO 18 | SPI1_CE0_N |
 || GPIO 27 | 13 | 14 | GND | - |
 || GPIO 22 | 15 | 16 | GPIO 23 ||
 | - | 3.3V | 17 | 18 | GPIO 24 ||
