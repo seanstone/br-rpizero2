@@ -17,7 +17,7 @@
 || GND | 25 | 26 | GPIO 7 | |
 || GPIO 0 | 27 | 28 | GPIO 1 ||
 || GPIO 5 | 29 | 30 | GND ||
-|| GPIO 6 | 31 | 32 | GPIO 12 ||
+| SOE | GPIO 6 | 31 | 32 | GPIO 12 ||
 || GPIO 13 | 33 | 34 | GND ||
 | | GPIO 19 | 35 | 36 | GPIO 16 ||
 || GPIO 26 | 37 | 38 | GPIO 20 | |
