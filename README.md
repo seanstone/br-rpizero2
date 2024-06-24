@@ -20,5 +20,5 @@
 | SOE | GPIO 6 | 31 | 32 | GPIO 12 ||
 || GPIO 13 | 33 | 34 | GND | - |
 | | GPIO 19 | 35 | 36 | GPIO 16 ||
-|| GPIO 26 | 37 | 38 | GPIO 20 | |
-| - | GND | 39 | 40 | GPIO 21 | |
+|| GPIO 26 | 37 | 38 | GPIO 20 | SPI1_MOSI |
+| - | GND | 39 | 40 | GPIO 21 | SPI1_SCLK |
