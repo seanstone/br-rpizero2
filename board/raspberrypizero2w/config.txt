@@ -33,3 +33,6 @@ dtparam=krnbt=on
 
 # enable 64bits support
 arm_64bit=1
+
+# enable SPI1
+dtoverlay=spi1-1cs,cs0_pin=18
