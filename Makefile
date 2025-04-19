@@ -76,7 +76,7 @@ bash: build.img
 		sudo -H -u user bash -c "cd /home/user/br-rpizero2 && sudo mount -o loop build.img build && sudo chown user:users build && mkdir -p build/images && sudo mount --bind /home/user/images build/images && bash"
 
 flash-%: build/images/sdcard.img
-	@if df | grep '/Volumes/' | grep $*; then \
+	@if df | grep '/Volumes/' | grep -v '/System/Volumes' | grep $*; then \
 		(diskutil umount /dev/$*s1 || true) && \
 		dd if=$< of=/dev/$* bs=4k status=progress && \
 		sync; \
